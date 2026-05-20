@@ -1,0 +1,30 @@
+:root{
+  --bg:#ffffff; --text:#0b1020; --muted:#556; --card:#f8f9fb; --accent:#0066ff; --border:#e6e9ef
+}
+[data-theme="dark"]{
+  --bg:#0b0f18; --text:#e6eef9; --muted:#9fb0d6; --card:#0f1722; --accent:#4ea1ff; --border:#1f2937
+}
+*{box-sizing:border-box}
+body{font-family:Inter,system-ui,Segoe UI,Roboto,Arial;margin:0;background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased}
+.container{max-width:900px;margin:28px auto;padding:20px}
+header{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
+h1{margin:0;font-size:1.6rem}
+.muted{color:var(--muted);margin:4px 0 0;font-size:0.95rem}
+.controls{display:flex;gap:8px;align-items:center;margin:12px 0}
+.input-key{flex:1;padding:10px;border:1px solid var(--border);border-radius:8px;background:var(--card);color:var(--text)}
+.input-count{width:84px;padding:10px;border:1px solid var(--border);border-radius:8px;background:var(--card);color:var(--text)}
+.btn{padding:10px 12px;border-radius:8px;border:1px solid var(--border);background:transparent;color:var(--text);cursor:pointer}
+.btn.primary{background:linear-gradient(180deg,var(--accent),#0057d1);color:#fff;border:none}
+textarea{width:100%;min-height:160px;padding:12px;border-radius:8px;border:1px solid var(--border);background:var(--card);color:var(--text);resize:vertical}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:18px}
+.card{perspective:1000px}
+.card-inner{position:relative;width:100%;height:160px;transition:transform 0.6s;transform-style:preserve-3d;border-radius:10px}
+.card.flipped .card-inner{transform:rotateY(180deg)}
+.card-face{position:absolute;inset:0;border-radius:10px;padding:16px;background:var(--card);border:1px solid var(--border);display:flex;flex-direction:column;justify-content:center}
+.card-front{backface-visibility:hidden}
+.card-back{transform:rotateY(180deg);backface-visibility:hidden}
+.card h3{margin:0 0 8px;font-size:1rem}
+.card p{margin:0;color:var(--muted)}
+.card-actions{display:flex;gap:8px;margin-top:10px;justify-content:flex-end}
+.toggle{display:flex;align-items:center;gap:8px}
+.toggle input{width:18px;height:18px}

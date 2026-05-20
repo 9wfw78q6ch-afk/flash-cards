@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Flashcards Generator</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <div>
+          <h1>Flashcards Generator</h1>
+          <p class="muted">Paste notes, provide your OpenAI API key and generate concise flashcards.</p>
+        </div>
+        <div class="header-actions">
+          <label class="toggle">
+            <input id="themeToggle" type="checkbox" />
+            <span>Dark</span>
+          </label>
+        </div>
+      </header>
+
+      <section class="controls">
+        <input id="apiKey" placeholder="OpenAI API key" class="input-key" />
+        <input id="count" type="number" min="1" max="50" value="8" class="input-count" />
+        <button id="generate" class="btn primary">Generate</button>
+        <button id="export" class="btn" disabled>Export JSON</button>
+      </section>
+
+      <section>
+        <textarea id="text" placeholder="Paste notes, article or topic here"></textarea>
+      </section>
+
+      <section id="results" class="cards"></section>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
